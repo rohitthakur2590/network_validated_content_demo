@@ -5,7 +5,7 @@ collections:
   - name: cisco.ios
   - name: https://github.com/redhat-cop/network.base
     type: git
-    version: devel
+    version: main
   - name: https://github.com/redhat-cop/network.bgp
     type: git
-    version: devel
+    version: main
