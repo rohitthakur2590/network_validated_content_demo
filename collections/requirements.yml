@@ -1,11 +1,14 @@
 ---
 collections:
   - name: ansible.netcommon
+    version: version: 4.1.0
+    
   - name: ansible.utils
+    version: 2.7.0
   - name: cisco.ios
-  - name: https://github.com/redhat-cop/network.base
+  - name: https://github.com/redhat-cop/network.base.git
     type: git
     version: main
-  - name: https://github.com/redhat-cop/network.bgp
+  - name: https://github.com/redhat-cop/network.bgp.git
     type: git
     version: main
