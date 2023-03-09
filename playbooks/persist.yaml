@@ -7,6 +7,7 @@
         name: network.base.resource_manager
       vars:
         action: persist
+        ansible_network_os: cisco.ios.ios
         resources:
           - 'interfaces'
           - 'l2_interfaces'
