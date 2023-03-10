@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: rtr1
   gather_facts: false
   tasks:
     - name: Network BGP Manager
