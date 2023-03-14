@@ -1,0 +1,21 @@
+---
+- hosts: rtr1
+  gather_facts: false
+  tasks:
+    - name: Network OSPF Manager
+      ansible.builtin.include_role:
+        name: network.ospf.run
+      vars:
+        ansible_network_os: cisco.ios.ios
+        actions:
+          - name: health_check
+            vars:
+              details: true
+              checks:
+                - name: all_neighbors_up
+                  ignore_errors: true
+                - name: all_neighbors_down
+                - name: min_neighbors_up
+                  min_count: 1
+                  ignore_errors: true
+                - name: ospf_status_summary
