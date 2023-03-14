@@ -1,0 +1,11 @@
+---
+- hosts: rtr1
+  gather_facts: false
+  tasks:
+    - name: Network OSPF Manager
+      ansible.builtin.include_role:
+        name: network.ospf.run
+      vars:
+        ansible_network_os: cisco.ios.ios
+        actions:
+          - name: persist
