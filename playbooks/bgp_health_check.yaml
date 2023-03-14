@@ -1,0 +1,21 @@
+---
+- hosts: rtr1
+  gather_facts: false
+  tasks:
+    - name: Network BGP Manager
+      ansible.builtin.include_role:
+        name: network.bgp.run
+      vars:
+        ansible_network_os: cisco.ios.ios
+        actions:
+          - name: health_check
+            vars:
+              details: true
+              checks:
+                - name: all_neighbors_up
+                  ignore_errors: true
+                - name: all_neighbors_down
+                  ignore_errors: true
+                - name: min_neighbors_up
+                  min_count: 1
+                - name: bgp_status_summary
