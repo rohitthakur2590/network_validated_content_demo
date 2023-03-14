@@ -11,3 +11,6 @@ collections:
   - name: https://github.com/redhat-cop/network.bgp.git
     type: git
     version: main
+  - name: https://github.com/redhat-cop/network.ospf.git
+    type: git
+    version: main
