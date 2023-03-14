@@ -4,30 +4,11 @@
   tasks:
     - name: Network BGP Manager
       ansible.builtin.include_role:
-        name: network.bgp.run
+        name: network.base.resource_manager
       vars:
+        action: gather
         ansible_network_os: cisco.ios.ios
-        actions:
-          - name: health_check
-            vars:
-              details: true
-              checks:
-                - name: all_neighbors_up
-                  ignore_errors: true
-                - name: all_neighbors_down
-                  ignore_errors: true
-                - name: min_neighbors_up
-                  min_count: 1
-                - name: bgp_status_summary 
-                
-
-#     - name: Network BGP Manager
-#       ansible.builtin.include_role:
-#         name: network.base.resource_manager
-#       vars:
-#         action: gather
-#         ansible_network_os: cisco.ios.ios
-#         resources:
-#           - 'interfaces'
-#           - 'l2_interfaces'
-#           - 'l3_interfaces'
+        resources:
+          - 'interfaces'
+          - 'l2_interfaces'
+          - 'l3_interfaces'
